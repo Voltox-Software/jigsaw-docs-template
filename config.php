@@ -3,9 +3,9 @@
 use Illuminate\Support\Str;
 
 return [
-    'baseUrl' => '',
+    'baseUrl' => 'http://localhost:7777',
     'production' => false,
-    'siteName' => 'Docs Starter Template',
+    'siteName' => 'Voltox Documentation',
     'siteDescription' => 'Beautiful docs powered by Jigsaw',
 
     // Algolia DocSearch credentials

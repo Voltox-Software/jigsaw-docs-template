@@ -4,6 +4,7 @@ return [
     'Getting Started' => [
         'url' => 'docs/getting-started',
         'children' => [
+            'Authorizing OAuth Apps' => 'docs/authorizing-oauth-apps',
             'Customizing Your Site' => 'docs/customizing-your-site',
             'Navigation' => 'docs/navigation',
             'Algolia DocSearch' => 'docs/algolia-docsearch',
