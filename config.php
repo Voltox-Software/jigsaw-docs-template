@@ -3,7 +3,7 @@
 use Illuminate\Support\Str;
 
 return [
-    'baseUrl' => 'http://localhost:7777',
+    'baseUrl' => 'https://v-docs.herokuapp.com/',
     'production' => false,
     'siteName' => 'Voltox Documentation',
     'siteDescription' => 'Beautiful docs powered by Jigsaw',
