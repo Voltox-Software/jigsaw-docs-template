@@ -4,6 +4,7 @@
     "dev": "mix",
     "watch": "mix watch",
     "start": "mix watch",
+    "serve": "node server.js",
     "prod": "mix --production"
   },
   "devDependencies": {
