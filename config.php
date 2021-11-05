@@ -3,10 +3,10 @@
 use Illuminate\Support\Str;
 
 return [
-    'baseUrl' => 'https://v-docs.herokuapp.com',
-    'production' => true,
+    'baseUrl' => 'http://localhost:7777',
+    'production' => false,
     'siteName' => 'Voltox Documentation',
-    'siteDescription' => 'Beautiful docs powered by Voltox',
+    'siteDescription' => 'Beautiful docs powered by Jigsaw',
 
     // Algolia DocSearch credentials
     'docsearchApiKey' => env('DOCSEARCH_KEY'),

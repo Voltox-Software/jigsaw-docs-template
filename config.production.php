@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'baseUrl' => 'https://jigsaw-docs-template.tighten.co',
+    'baseUrl' => 'https://v-docs.herokuapp.com',
     'production' => true,
 
     // DocSearch credentials
