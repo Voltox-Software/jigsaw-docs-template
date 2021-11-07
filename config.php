@@ -6,7 +6,7 @@ return [
     'baseUrl' => 'http://localhost:7777',
     'production' => false,
     'siteName' => 'Voltox Documentation',
-    'siteDescription' => 'Beautiful docs powered by Jigsaw',
+    'siteDescription' => 'A guide into integrating our services on your project.',
 
     // Algolia DocSearch credentials
     'docsearchApiKey' => env('DOCSEARCH_KEY'),

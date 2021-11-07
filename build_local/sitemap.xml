@@ -2,92 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
   <loc>http://localhost:7777/assets\build\css/main.css</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\build\js/main.js</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\build/mix-manifest.json</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\img/docsearch.png</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\img/icon-stack.svg</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\img/icon-terminal.svg</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\img/icon-window.svg</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\img/logo-large.svg</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\img/logo.png</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\img/logo.svg</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/assets\img/magnifying-glass.svg</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/docs/algolia-docsearch</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/docs/authorizing-oauth-apps</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>http://localhost:7777/docs/authorizing-payments</loc>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/docs/custom-404-page</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/docs/customizing-your-site</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/docs/getting-started</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777/docs/navigation</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>http://localhost:7777</loc>
-  <lastmod>2021-11-03T21:32:43+01:00</lastmod>
+  <lastmod>2021-11-05T20:57:31+01:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
 </urlset>

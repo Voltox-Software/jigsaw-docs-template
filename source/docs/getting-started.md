@@ -18,8 +18,8 @@ As with all Jigsaw sites, configuration settings can be found in `config.php`; y
 return [
     'baseUrl' => 'https://my-awesome-jigsaw-site.com/',
     'production' => false,
-    'siteName' => 'My Site',
-    'siteDescription' => 'Give your documentation a boost with Jigsaw.',
+    'siteName' => 'Voltox Documentation',
+    'siteDescription' => 'A guide into our services.',
     'docsearchApiKey' => '',
     'docsearchIndexName' => '',
     'navigation' => require_once('navigation.php'),

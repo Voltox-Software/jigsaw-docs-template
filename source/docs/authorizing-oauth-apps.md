@@ -21,7 +21,7 @@ section: content
         vertical-align: top;
     }
     #params_p {
-        font-size: 1.375em;
+      font-size: 1.375em;
     }
 </style>
 
@@ -48,13 +48,13 @@ To authorize your OAuth app, consider which authorization flow best fits your ap
 
 #### 1) Request a user's Voltox identity
 
-<pre>GET https://voltox.com/login/oauth/authorize</pre>
+<pre>GET https://api.voltox.tech/login/oauth/authorize</pre>
 
 When your Voltox App specifies a login parameter, it prompts users with a specific account they can use for signing in and authorizing your app.
 
 <p id="params_p">Parameters</p>
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>client_id</code></td><td><code>string</code></td><td><strong>Required</strong>. The client ID you received from Voltox when you <a href="https://voltox.com/settings/applications/new">registered</a>.</td></tr><tr><td><code>redirect_uri</code></td><td><code>string</code></td><td>The URL in your application where users will be sent after authorization. See details below about <a href="#redirect-urls">redirect urls</a>.</td></tr><tr></tr><tr><td><code>scope</code></td><td><code>string</code></td><td>A comma-delimited list of <a href="/en/apps/building-oauth-apps/understanding-scopes-for-oauth-apps">scopes</a>. If not provided, <code>scope</code> defaults to an empty list for users that have not authorized any scopes for the application. For users who have authorized scopes for the application, the user won't be shown the OAuth authorization page with the list of scopes. Instead, this step of the flow will automatically complete with the set of scopes the user has authorized for the application. For example, if a user has already performed the web flow twice and has authorized one token with <code>user</code> scope and another token with <code>repo</code> scope, a third web flow that does not provide a <code>scope</code> will receive a token with <code>user</code> and <code>repo</code> scope.</td></tr><tr><td><code>state</code></td><td><code>string</code></td><td>An unguessable random string. It is used to protect against cross-site request forgery attacks.</td></tr><tr><td><code>allow_signup</code></td><td><code>string</code></td><td>Whether or not unauthenticated users will be offered an option to sign up for Voltox during the OAuth flow. The default is <code>true</code>. Use <code>false</code> when a policy prohibits signups.</td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>client_id</code></td><td><code>string</code></td><td><strong>Required</strong>. The client ID you received from Voltox when you <a href="https://api.voltox.tech/settings/applications/new">registered</a>.</td></tr><tr><td><code>redirect_uri</code></td><td><code>string</code></td><td>The URL in your application where users will be sent after authorization. See details below about <a href="#redirect-urls">redirect urls</a>.</td></tr><tr></tr><tr><td><code>scope</code></td><td><code>string</code></td><td>A comma-delimited list of <a href="/en/apps/building-oauth-apps/understanding-scopes-for-oauth-apps">scopes</a>. If not provided, <code>scope</code> defaults to an empty list for users that have not authorized any scopes for the application. For users who have authorized scopes for the application, the user won't be shown the OAuth authorization page with the list of scopes. Instead, this step of the flow will automatically complete with the set of scopes the user has authorized for the application. For example, if a user has already performed the web flow twice and has authorized one token with <code>user</code> scope and another token with <code>repo</code> scope, a third web flow that does not provide a <code>scope</code> will receive a token with <code>user</code> and <code>repo</code> scope.</td></tr><tr><td><code>state</code></td><td><code>string</code></td><td>An unguessable random string. It is used to protect against cross-site request forgery attacks.</td></tr><tr><td><code>allow_signup</code></td><td><code>string</code></td><td>Whether or not unauthenticated users will be offered an option to sign up for Voltox during the OAuth flow. The default is <code>true</code>. Use <code>false</code> when a policy prohibits signups.</td></tr></tbody></table>
 
 #### 2) Users are redirected back to your site by Voltox
 
@@ -62,7 +62,7 @@ If the user accepts your request, Voltox redirects back to your site with a temp
 
 Exchange this <code>code</code> for an access token:
 
-<pre>POST https://voltox.com/login/oauth/access_token</pre>
+<pre>POST https://api.voltox.tech/login/oauth/access_token</pre>
 
 <table>
   <thead>

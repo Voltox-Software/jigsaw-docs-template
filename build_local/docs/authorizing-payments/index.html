@@ -7,9 +7,9 @@
         <meta name="description" content="s">
 
         <meta property="og:site_name" content="Voltox Documentation"/>
-        <meta property="og:title" content="Authorizing OAuth Apps | Voltox Documentation"/>
+        <meta property="og:title" content="Authorizing Payments | Voltox Documentation"/>
         <meta property="og:description" content="s"/>
-        <meta property="og:url" content="http://localhost:7777/docs/authorizing-oauth-apps"/>
+        <meta property="og:url" content="http://localhost:7777/docs/authorizing-payments"/>
         <meta property="og:image" content="/assets/img/logo.png"/>
         <meta property="og:type" content="website"/>
 
@@ -17,7 +17,7 @@
         <meta name="twitter:card" content="summary_large_image">
 
         
-        <title>Voltox Documentation | Authorizing OAuth Apps</title>
+        <title>Voltox Documentation | Authorizing Payments</title>
 
         <link rel="home" href="http://localhost:7777">
         <link rel="icon" href="/favicon.ico">
@@ -80,7 +80,7 @@
             <li class="pl-4">
             
         <a href="/docs/authorizing-oauth-apps"
-            class="lvl1  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Authorizing OAuth Apps
         </a>
@@ -89,7 +89,7 @@
             <li class="pl-4">
             
         <a href="/docs/authorizing-payments"
-            class="lvl1   nav-menu__item hover:text-blue-500"
+            class="lvl1  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
         >
             Authorizing Payments
         </a>
@@ -120,23 +120,24 @@
       font-size: 1.375em;
     }
 </style>
-<h1>Authorizing OAuth Apps</h1>
-<h3>You can enable other users to authorize your OAuth App.</h3>
-<p>Voltox's OAuth implementation supports the standard <a href="https://tools.ietf.org/html/rfc6749#section-4.1">authorization code grant type</a> and the OAuth 2.0 <a href="https://tools.ietf.org/html/rfc8628">Device Authorization Grant</a> for apps that don't have access to a web browser.</p>
-<p>To authorize your OAuth app, consider which authorization flow best fits your app.</p>
+<h1>Authorizing Payments (V-Pay)</h1>
+<h3>You can enable users to authorize payments for your Project.</h3>
+<p>To integrate Voltox's V-Pay, you need to go to <a href="http://developers.voltox.tech/credentials">V-Developers Console</a> and create an API Key that represents your project.</p>
+<p>To integrate V-Pay, consider which flow best fits your app.</p>
 <ul>
     <li>
-<a href="#web-application-flow">Web application flow</a>: Used to authorize users for standard OAuth apps that run in the browser.</li>
+<a href="#web-application-flow">Web application flow</a>: Used to authorize payments for standard applications that run in the browser.</li>
 </ul>
 <h3>Web application flow</h3>
 <ul>
     <li style="list-style-type: disc">Users are redirected to request their Voltox identity</li>
+    <li style="list-style-type: disc">Users are asked for billing details information.</li>
+    <li style="list-style-type: disc">Users are asked for payment authorization verification.</li>
     <li style="list-style-type: disc">Users are redirected back to your site by Voltox</li>
-    <li style="list-style-type: disc">Your app requests for an access token using the authorization code received by Voltox Identity</li>
-    <li style="list-style-type: disc">Your app accesses the API with the user's access token</li>
+    <li style="list-style-type: disc">Your app accesses the V-Pay Charge object created by Voltox for personal use.</li>
 </ul>
-<h4>1) Request a user's Voltox identity</h4>
-<pre>GET https://api.voltox.tech/login/oauth/authorize</pre>
+<h4>1) Request a user's payment authorization</h4>
+<pre>GET https://api.voltox.tech/pay/:amount</pre>
 <p>When your Voltox App specifies a login parameter, it prompts users with a specific account they can use for signing in and authorizing your app.</p>
 <p id="params_p">Parameters</p>
 <table><thead><tr>
@@ -146,10 +147,16 @@
 </tr></thead>
 <tbody>
 <tr>
-<td><code>client_id</code></td>
+<td><code>amount</code></td>
+<td><code>integer</code></td>
+<td>
+<strong>Required</strong>. The amount in cents that your application requests for payment.</td>
+</tr>
+<tr>
+<td><code>app_id</code></td>
 <td><code>string</code></td>
 <td>
-<strong>Required</strong>. The client ID you received from Voltox when you <a href="https://api.voltox.tech/settings/applications/new">registered</a>.</td>
+<strong>Required</strong>. The app ID you received from Voltox when you <a href="http://developers.voltox.tech/">registered</a>.</td>
 </tr>
 <tr>
 <td><code>redirect_uri</code></td>
@@ -157,26 +164,14 @@
 <td>The URL in your application where users will be sent after authorization. See details below about <a href="#redirect-urls">redirect urls</a>.</td>
 </tr>
 <tr></tr>
-<tr>
-<td><code>scope</code></td>
-<td><code>string</code></td>
-<td>A comma-delimited list of <a href="/en/apps/building-oauth-apps/understanding-scopes-for-oauth-apps">scopes</a>. If not provided, <code>scope</code> defaults to an empty list for users that have not authorized any scopes for the application. For users who have authorized scopes for the application, the user won't be shown the OAuth authorization page with the list of scopes. Instead, this step of the flow will automatically complete with the set of scopes the user has authorized for the application. For example, if a user has already performed the web flow twice and has authorized one token with <code>user</code> scope and another token with <code>repo</code> scope, a third web flow that does not provide a <code>scope</code> will receive a token with <code>user</code> and <code>repo</code> scope.</td>
-</tr>
-<tr>
-<td><code>state</code></td>
-<td><code>string</code></td>
-<td>An unguessable random string. It is used to protect against cross-site request forgery attacks.</td>
-</tr>
-<tr>
-<td><code>allow_signup</code></td>
-<td><code>string</code></td>
-<td>Whether or not unauthenticated users will be offered an option to sign up for Voltox during the OAuth flow. The default is <code>true</code>. Use <code>false</code> when a policy prohibits signups.</td>
-</tr>
+<tr><td></td></tr>
+<tr></tr>
+<tr></tr>
 </tbody></table>
 <h4>2) Users are redirected back to your site by Voltox</h4>
-<p>If the user accepts your request, Voltox redirects back to your site with a temporary code in a code parameter as well as the state you provided in the previous step in a state parameter. The temporary code will expire after 10 minutes. If the states don't match, then a third party created the request, and you should abort the process.</p>
-<p>Exchange this <code>code</code> for an access token:</p>
-<pre>POST https://api.voltox.tech/login/oauth/access_token</pre>
+<p>If the user accepts your request, Voltox redirects back to your site with the charge object containing payment and billing address details.</p>
+<p>You can save the charge ID for future use.</p>
+<pre>GET https://api.voltox.tech/api/v1/charges/:charge_id</pre>
 <table>
   <thead>
     <tr>
@@ -188,64 +183,19 @@
   <tbody>
     <tr>
       <td>
-        <code>client_id</code>
+        <code>charge_id</code>
       </td>
       <td>
         <code>string</code>
       </td>
       <td>
-        <strong>Required.</strong> The client ID you received from Voltox for
-        your OAuth App.
+        <strong>Required.</strong> The charge ID you received from Voltox after an user's payment authorization.
       </td>
     </tr>
-    <tr>
-      <td>
-        <code>client_secret</code>
-      </td>
-      <td>
-        <code>string</code>
-      </td>
-      <td>
-        <strong>Required.</strong> The client secret you received from Voltox
-        for your OAuth App.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>code</code>
-      </td>
-      <td>
-        <code>string</code>
-      </td>
-      <td>
-        <strong>Required.</strong> The code you received as a response to Step
-        1.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>redirect_uri</code>
-      </td>
-      <td>
-        <code>string</code>
-      </td>
-      <td>
-        The URL in your application where users are sent after authorization.
-      </td>
-    </tr>
+
   </tbody>
 </table>
-<h4>3) Use the access token to access the API</h4>
-<p>The access token allows you to make requests to the API on a behalf of a user.</p>
-<pre>
-Authorization: Bearer OAUTH-TOKEN
-GET https://api.voltox.com/me
-</pre>
-<p>For example, in curl you can set the Authorization header like this:</p>
-<pre>
-curl -H "Authorization: Bearer OAUTH-TOKEN" https://api.voltox.com/me
-</pre>
-<!-- # Authorizing OAuth Apps {#authorizing-oauth-apps}
+<!-- # Authorizing Payments {#authorizing-oauth-apps}
 This starter template includes support for [DocSearch](https://community.algolia.com/docsearch/), a documentation indexing and search tool provided by Algolia for free. To configure this tool, you’ll need to sign up with Algolia and set your API Key and index name in `config.php`. Algolia will then crawl your documentation regularly, and index all your content.
 [Get your DocSearch credentials here.](https://community.algolia.com/docsearch/#join-docsearch-program)
 ```php
